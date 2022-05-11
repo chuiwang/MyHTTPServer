@@ -12,6 +12,7 @@ public class HTTPServer {
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(8080, 1, InetAddress.getByName("127.0.0.1"));
+            System.out.println("连接开始，访问localhost:8080/<name>,其中<name>为对应资源名");
         } catch (IOException e) {
             e.printStackTrace();
             System.exit(1);

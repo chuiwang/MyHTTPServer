@@ -22,6 +22,7 @@ public class Response {
         FileInputStream fis = null;
         try {
             File file = new File(HTTPServer.WEB_ROOT, request.getUri());
+            System.out.println(request.getUri());
             if (file.exists()) {
                 fis = new FileInputStream(file);
                 int ch = fis.read(bytes, 0, BUFFER_SIZE);
@@ -35,7 +36,7 @@ public class Response {
                 output.write(errorMessage.getBytes());
             }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("err");
         } finally {
             if (fis != null)
                 fis.close();
